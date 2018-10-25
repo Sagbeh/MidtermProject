@@ -1,0 +1,51 @@
+<html>
+   <body>
+<html>
+   <body>
+
+      <h2 style = "text-align: center;">Registration Form</h2>
+
+      <form action = "{{ url_for('register') }}" method = "POST">
+         <fieldset>
+            <legend>Registration Form</legend>
+            {{ form.hidden_tag() }}
+
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.user.label }}{{ form.user }}
+               <br>
+
+               {{ form.password.label }}{{ form.password }} <br>
+               {{ form.fName.label }}{{ form.fName }}
+               <br>
+
+               {{ form.lName.label }}{{ form.lName }}
+               <br>
+
+               {{ form.add.label }}{{ form.add }}
+               <br>
+                 {{ form.add2.label }}{{ form.add2 }}
+               <br>
+
+               {{ form.zip.label }}{{ form.zip }}
+               <br>
+                 {{ form.city.label }}{{ form.city }}
+               <br>
+
+               {{ form.state.label }}{{ form.state }}
+               <br>
+                 {{ form.phone.label }}{{ form.phone }}
+               <br>
+               {{ form.submit }}
+            </div>
+
+         </fieldset>
+      </form>
+
+</body>
+</html>
+
+
+   <a href = "/login">Go back to home page</a>
+
+   </body>
+</html>

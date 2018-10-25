@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+   <body>
+
+      <table border = 1>
+         <thead>
+            <td>Order ID</td>
+            <td>Customer ID</td>
+            <td>Hug Type</td>
+            <td>Hug Duration</td>
+            <td>Pat</td>
+            <td>Sway</td>
+            <td>Lift</td>
+            <td>Order Complete?</td>
+         </thead>
+
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["orderID"]}}</td>
+               <td>{{row["customerID"]}}</td>
+               <td> {{row["hugType"]}}</td>
+               <td>{{row['hugDuration']}}</td>
+               <td>{{row["pat"]}}</td>
+               <td> {{row["sway"]}}</td>
+               <td>{{row['lift']}}</td>
+                <td>{{row['orderComplete']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      <a href = "/adminindex">Go back to home page</a><br>
+   <a href="{{ url_for('logout') }}">Logout</a>
+
+   </body>
+</html>

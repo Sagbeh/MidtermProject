@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+   <head>
+      <title>Admin Menu</title>
+   </head>
+   <body>
+
+      {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            <ul>
+               {% for message in messages %}
+               <li>{{ message }}</li>
+               {% endfor %}
+            </ul>
+         {% endif %}
+      {% endwith %}
+
+      <h1>Admin Menu</h1>
+      <h3><a href={{ url_for('list') }}>View Customers</a></h3>
+      <h3><a href={{ url_for('searchcustomer') }}>View One Customer</a></h3>
+      <h3><a href={{ url_for('deletecustomer') }}>Delete Customers</a></h3>
+      <h3><a href={{ url_for('orderlist') }}>View All Orders</a></h3>
+      <h3><a href={{ url_for('openorders') }}>View Open Orders</a></h3>
+      <h3><a href={{ url_for('closedorders') }}>View Closed Orders</a></h3>
+      <h3><a href={{ url_for('closeorders') }}>Close Orders</a></h3>
+<a href="{{ url_for('logout') }}">Logout</a>
+
+   </body>
+</html>

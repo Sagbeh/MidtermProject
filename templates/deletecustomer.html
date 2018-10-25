@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+   <body>
+
+
+      <h2 style = "text-align: center;">Delete Customer</h2>
+
+      <form action = "{{ url_for('deletecustomer') }}" method = "POST">
+         <fieldset>
+            <legend>Enter the customer ID to delete the customer</legend>
+            {{ form.hidden_tag() }}
+
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.cid.label }}{{ form.cid }}
+               <br>
+               {{ form.submit }}
+            </div>
+
+         </fieldset>
+      </form>
+
+      <table border = 1>
+         <thead>
+            <td>CustomerID</td>
+            <td>Username</td>
+            <td>Password</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Address</td>
+            <td>Address 2</td>
+            <td>City</td>
+            <td>State</td>
+            <td>Zipcode</td>
+            <td>Phone Number</td>
+         </thead>
+
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["customerID"]}}</td>
+               <td>{{row["userName"]}}</td>
+               <td> {{row["password"]}}</td>
+               <td>{{row['firstName']}}</td>
+               <td>{{row["lastName"]}}</td>
+               <td> {{row["address1"]}}</td>
+               <td>{{row['address2']}}</td>
+               <td>{{row["city"]}}</td>
+               <td> {{row["state"]}}</td>
+               <td>{{row['zipcode']}}</td>
+               <td>{{row["phoneNumber"]}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+
+      <a href = "/adminindex">Go back to home page</a><br>
+   <a href="{{ url_for('logout') }}">Logout</a>
+
+   </body>
+</html>

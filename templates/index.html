@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div class="container" style="margin-top:50px;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                {% if session_user_name %}
+                    <p>Hello <b>{{ session_user_name }}</b></p>
+                {% endif %}
+            </div>
+        </div>
+
+    <h2>Menu</h2>
+<h3><a href={{ url_for('orderHug') }}>Order a Hug</a></h3>
+<a href="{{ url_for('logout') }}">Logout</a>
+
+
+    </div>
+</body>
+</html>

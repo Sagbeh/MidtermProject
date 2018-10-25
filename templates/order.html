@@ -1,0 +1,31 @@
+<html>
+   <body>
+   
+      <h2 style = "text-align: center;">Order Form</h2>
+      
+      <form action = "{{ url_for('orderHug') }}" method = "POST">
+         <fieldset>
+            <legend>Order Form</legend>
+            {{ form.hidden_tag() }}
+
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.type.label }}{{ form.type }}
+               <br>
+               
+               {{ form.duration.label }}{{ form.duration }} <br>
+               {{ form.pat.label }}{{ form.pat }}
+               <br>
+               
+               {{ form.sway.label }}{{ form.sway }}
+               <br>
+               
+               {{ form.lift.label }}{{ form.lift }}
+               <br>
+               {{ form.submit }}
+            </div>
+            
+         </fieldset>
+      </form>
+
+</body>
+</html>
